@@ -25,6 +25,8 @@ ticTacToeApp.factory('BoardService', function(){
         return board;
     }
 
+    return factory;
+
 });
 
 //Can be many instances of the same type of controller in a game 
