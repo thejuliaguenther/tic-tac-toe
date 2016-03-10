@@ -14,38 +14,62 @@ ticTacToeApp.config(['$routeProvider', function ($routeProvider) {
 ticTacToeApp.value('gamePieceX', 'X');
 ticTacToeApp.value('gamePieceO', 'O');
 
+ticTacToeApp.value('boardRows', [0,1,2]);
+ticTacToeApp.value('boardColumns', [0,1,2]);
+
 ticTacToeApp.factory('BoardService', function(){
     var factory = {};
 
     factory.createNewBoard = function(){
         var board = [];
-        for(var i = 0; i < 9; i++){
-            board.push[null];
+        for(var i = 0; i < 3; i++){
+            for(var j = 0; j < 3; j++){
+                board[i][j].push(null);
+            }
         }
         return board;
     }
-
     return factory;
-
 });
 
 //Can be many instances of the same type of controller in a game 
-ticTacToeApp.controller('gameController',['$scope', 'gamePieceX', 'gamePieceO', 'BoardService', function($scope, gamePieceX, gamePieceO, BoardService){
+ticTacToeApp.controller('gameController',['$scope','gamePieceX', 'gamePieceO', 'boardRows','boardColumns', 'BoardService', function($scope, gamePieceX, gamePieceO, boardRows, boardColumns, BoardService){
 
     $scope.X = gamePieceX;
     $scope.O = gamePieceO;
-    // $scope.moveCount = 0;
-
+    $scope.moveCount = 0;
+ 
     $scope.board = BoardService.createNewBoard();
 
-    
+    $scope.boardRows = boardRows;
+    $scope.boardColumns = boardColumns;
 
-    // $scope.makeMove = function(moveCount){
-    //     if moveCount === 0{
-    //         return;
-        
-    //     }
-    // };
+    $scope.makeMove = function(row,colum){
+        alert("Clicked!!!");
+        // moveCount++;
+        // var indexClicked = int(event.target.id); 
+        // var cellClicked = board[indexClicked];
+        // if(cellClicked != null){
+        //     return;
+        // } 
+        // else if(moveCount % 2 == 0){
+        //     cellClicked = 'O';
+        // }
+        // else{
+        //     cellClicked = 'X';
+        // }
+        // console.log("Board:"+ board);
+    };
+
+
+    $scope.isFull= function(){
+        for (var i = 0; i < 9; i++) {
+            if (!board[i]) {
+                return false;
+            }
+        }
+        return true;
+    };
 
 
 }]);

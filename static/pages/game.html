@@ -1,19 +1,20 @@
 <h1>GAME!!!!! <button id="start">Start</button></h1>
 
 <table id="game-board" cellpadding="0" cellspacing="0">
-  <tr>
-    <td id="cell-0"></td>
-    <td id="cell-1"></td>
-    <td id="cell-2"></td>
+  <tr ng-repeat="row in boardRows" ></tr>
+  <td ng-repeat="column in boardColumns" ng-click="makeMove(row,column)"></td>
+ <!-- <td id="0" ng-click="makeMove(id)"> </td>
+    <td id="1" ng-click="makeMove(id)"> </td>
+    <td id="2" ng-click="makeMove(id)"> </td>
   </tr>
   <tr>
-    <td id="cell-3"></td>
-    <td id="cell-4"></td>
-    <td id="cell-5"></td>
+    <td id="3" ng-click="makeMove(id)"> </td>
+    <td id="4" ng-click="makeMove(id)"> </td>
+    <td id="5" ng-click="makeMove($event)"> </td>
   </tr>
   <tr>
-    <td id="cell-6"></td>
-    <td id="cell-7"></td>
-    <td id="cell-8"></td>
-  </tr>
+    <td id="6" ng-click="makeMove($event)"> </td>
+    <td id="7" ng-click="makeMove($event)"> </td>
+    <td id="8" ng-click="makeMove($event)"> </td>
+  </tr> --> 
 </table>
