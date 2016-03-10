@@ -23,12 +23,10 @@ ticTacToeApp.factory('BoardService', function(){
     factory.createNewBoard = function(){
         var board = [];
         for(var i = 0; i < 3; i++){
-            for(var j = 0; j < 3; j++){
-                board[i][j].push(null);
+            board.push([null, null, null]);
             }
-        }
         return board;
-    }
+        }
     return factory;
 });
 
@@ -44,21 +42,22 @@ ticTacToeApp.controller('gameController',['$scope','gamePieceX', 'gamePieceO', '
     $scope.boardRows = boardRows;
     $scope.boardColumns = boardColumns;
 
-    $scope.makeMove = function(row,colum){
-        alert("Clicked!!!");
+    $scope.makeMove = function(row,column){
+        console.log("row"+row+" column"+column);
         // moveCount++;
-        // var indexClicked = int(event.target.id); 
-        // var cellClicked = board[indexClicked];
+        // var cellClicked = board[row][colum];
         // if(cellClicked != null){
         //     return;
         // } 
-        // else if(moveCount % 2 == 0){
-        //     cellClicked = 'O';
-        // }
         // else{
-        //     cellClicked = 'X';
+        //     if(moveCount % 2 == 0){
+        //         cellClicked = 'O';
+        //     }
+        //     else{
+        //         cellClicked = 'X';
+        //     }
+        // alert("Board:"+ board);
         // }
-        // console.log("Board:"+ board);
     };
 
 

@@ -1,8 +1,9 @@
 <h1>GAME!!!!! <button id="start">Start</button></h1>
 
 <table id="game-board" cellpadding="0" cellspacing="0">
-  <tr ng-repeat="row in boardRows" ></tr>
+  <tr ng-repeat="row in boardRows" >
   <td ng-repeat="column in boardColumns" ng-click="makeMove(row,column)"></td>
+ </tr>
  <!-- <td id="0" ng-click="makeMove(id)"> </td>
     <td id="1" ng-click="makeMove(id)"> </td>
     <td id="2" ng-click="makeMove(id)"> </td>
